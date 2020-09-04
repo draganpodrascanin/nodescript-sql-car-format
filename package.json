@@ -1,0 +1,25 @@
+{
+	"name": "nodescript-mysql-car-format",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/draganpodrascanin/nodescript-sql-car-format.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/draganpodrascanin/nodescript-sql-car-format/issues"
+	},
+	"homepage": "https://github.com/draganpodrascanin/nodescript-sql-car-format#readme",
+	"dependencies": {
+		"dotenv": "^8.2.0",
+		"mysql2": "^2.1.0"
+	}
+}
