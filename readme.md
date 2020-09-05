@@ -177,8 +177,8 @@
 
 ### Running script
 
-This node script you will get new car_makers and car_models separete table.
-They have _one to many_ relationship
+This node script will get you new car_makers and car_models separate tables.
+They have _one to many_ relationship.
 
 **car_makers** only have name field, and primary key.
 **car_models** have name, foreign key that point to car_maker_id, and pk
