@@ -1,6 +1,8 @@
 import mysql from 'mysql2/promise.js';
 import dotenv from 'dotenv';
-import formatToObject from './formatToObject.js';
+import createCarMakerTable from './createCarMakers.js';
+import createCarModelsTable from './createCarModels.js';
+
 dotenv.config({ path: 'config.env' });
 
 const connectToDB = async () => {
@@ -16,18 +18,12 @@ const connectToDB = async () => {
 	} catch (err) {
 		console.log("couldn't connect to db..", err);
 	}
+	await connection.execute('DROP  TABLE IF EXISTS car_models');
+	await connection.execute('DROP  TABLE IF EXISTS car_makers');
 
-	const [rows, fields] = await connection.execute(
-		'SELECT make, COUNT(model) as NUM_OF_MODEL FROM cars GROUP BY make;'
-	);
-
-	console.log('rows  == \n', rows);
-	console.log('fields  == \n', fields[0].name);
-
-	const obj = formatToObject(rows, fields);
-	console.log('OBJECT === ', obj);
-	return connection;
+	await createCarMakerTable(connection);
+	await createCarModelsTable(connection);
+	// createCarModels(connection)
 };
 
-const connection = connectToDB();
-// process.exit(1);
+connectToDB();

@@ -1,0 +1,2 @@
+displ = velicina motora;
+cylinders = br. cilindara;
